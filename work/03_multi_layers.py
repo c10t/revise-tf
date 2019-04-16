@@ -11,8 +11,9 @@ x_data = tf.placeholder(tf.float32, shape=x_shape)
 my_filter = tf.constant(0.25, shape=[2, 2, 1, 1])
 my_stride = [1, 2, 2, 1]
 
-mov_avg_layer = tf.nn.conv2d(x_data, my_filter, my_stride,
-                             padding='SAME', name='Moving_Avg_Window')
+mov_avg_layer = tf.nn.conv2d(
+    x_data, my_filter, my_stride,
+    padding='SAME', name='Moving_Avg_Window')
 
 
 def custom_layer(input_matrix):
